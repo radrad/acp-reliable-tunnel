@@ -1,0 +1,21 @@
+{
+  "serverUrl": "wss://acp-gateway.example.com/acp",
+  "tls": {
+    "caPath": "C:/acp-tunnel/tls/ca.crt",
+    "certPath": "C:/acp-tunnel/tls/client.crt",
+    "keyPath": "C:/acp-tunnel/tls/client.key",
+    "rejectUnauthorized": true,
+    "serverName": "acp-gateway.example.com"
+  },
+  "auth": {
+    "mode": "jwt",
+    "tokenEnv": "ACP_TUNNEL_TOKEN"
+  },
+  "reconnect": {
+    "initialDelayMs": 500,
+    "maxDelayMs": 5000
+  },
+  "metadata": {
+    "clientLabel": "windows11-vscode"
+  }
+}

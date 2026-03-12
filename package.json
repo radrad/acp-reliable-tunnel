@@ -1,0 +1,35 @@
+{
+  "name": "acp-reliable-tunnel",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Reliable ACP transport bridge over WebSocket with reconnect, ACKs, and remote agent hosting",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "acp-tunnel-server": "dist/bin/server.js",
+    "acp-tunnel-stdio-client": "dist/bin/stdio-client.js"
+  },
+  "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "check": "npm run build && npm run test:run",
+    "start:server": "tsx src/bin/server.ts",
+    "start:client": "tsx src/bin/stdio-client.ts",
+    "test": "vitest",
+    "test:run": "vitest run"
+  },
+  "dependencies": {
+    "@agentclientprotocol/sdk": "0.16.0",
+    "jose": "^6.2.1",
+    "ws": "^8.19.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.4.0",
+    "@types/ws": "^8.18.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}

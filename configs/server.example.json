@@ -1,0 +1,33 @@
+{
+  "listen": {
+    "host": "0.0.0.0",
+    "port": 9019,
+    "path": "/acp"
+  },
+  "tls": {
+    "certPath": "C:/acp-tunnel/tls/server.crt",
+    "keyPath": "C:/acp-tunnel/tls/server.key",
+    "caPath": "C:/acp-tunnel/tls/ca.crt",
+    "requestCert": true,
+    "rejectUnauthorizedClients": true
+  },
+  "auth": {
+    "mode": "jwt",
+    "issuer": "https://issuer.example.com",
+    "audience": "acp-tunnel",
+    "jwksUrl": "https://issuer.example.com/.well-known/jwks.json",
+    "algorithms": ["RS256"],
+    "requiredScopes": ["acp:tunnel"],
+    "clockToleranceSec": 30
+  },
+  "reconnectWindowMs": 30000,
+  "handshakeTimeoutMs": 5000,
+  "agent": {
+    "command": "claude-agent-acp",
+    "args": [],
+    "cwd": "C:/work/your-repo",
+    "env": {
+      "ANTHROPIC_API_KEY": "sk-..."
+    }
+  }
+}

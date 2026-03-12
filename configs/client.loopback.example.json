@@ -1,0 +1,14 @@
+{
+  "serverUrl": "ws://127.0.0.1:9019/acp",
+  "auth": {
+    "mode": "shared-secret",
+    "secret": "secret"
+  },
+  "reconnect": {
+    "initialDelayMs": 500,
+    "maxDelayMs": 5000
+  },
+  "metadata": {
+    "clientLabel": "local-loopback"
+  }
+}

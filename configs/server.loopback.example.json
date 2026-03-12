@@ -1,0 +1,21 @@
+{
+  "listen": {
+    "host": "127.0.0.1",
+    "port": 9019,
+    "path": "/acp"
+  },
+  "auth": {
+    "mode": "shared-secret",
+    "secret": "secret"
+  },
+  "reconnectWindowMs": 30000,
+  "handshakeTimeoutMs": 5000,
+  "agent": {
+    "command": "claude-agent-acp",
+    "args": [],
+    "cwd": "C:/work/your-repo",
+    "env": {
+      "ANTHROPIC_API_KEY": "sk-..."
+    }
+  }
+}
